@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {{>headerlink}}
+    
+</head>
+<body>
+      {{>navbar}}
+     <!--main header-->
+     <div class="container-fluid main_header">
+            <div class="row">
+               <div class="col-md-10 col-12 mx-auto">
+                   <div class="main-content">
+                       <form class="temp_form">
+                           <input type="text" id="cityName" autocomplete="off"  placeholder="Enter Your City Name">
+                           <input type="submit" value="Search" id="btnsubmit">
+                       </form>
+                   </div>
+                     <div class="tempInformation">
+                        <div class="top_layer">
+                         <p id="day">Saturday</p>
+                         <p id="date">19 June</p>
+                        </div>
+                        <div class="main_layer">
+                         <p id="city_name">Get Output Here</p>
+                         <div class="middle_layer data_hide">
+                         <p id="temp"><span id="temp_real_val">0</span> <sup>C</sup></p>
+                         <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i></p>
+                         </div>
+                        </div>
+
+                     </div>
+               </div>
+            </div>
+    </div>  
+    {{>footer}}
+    <script src="js/main.js"></script> 
+    <script>
+        const getCurrentDay = () => {
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+          let currentTime= new Date();
+          let day=weekday[currentTime.getDay()];
+          return day;
+        }
+  
+     const getCurrentTime=()=>{
+        var months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "June",
+          "July",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+         var now =new Date();
+         var month=months[now.getMonth()];
+         var date=now.getDate();
+
+         var hours=now.getHours();
+         var mins=now.getMinutes();
+         
+         var periods="AM";
+         if(hours>11){
+             periods="PM"
+             if(hours>12) hours -=12
+         }
+         if(mins<10)
+         {
+             mins="0"+mins;
+         }
+
+        return `${month} ${date} | ${hours}:${mins}${periods}`;
+        console.log(month+"/"+ day )
+
+    </script>        
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerlink}}
+    
+</head>
+<body>
+    {{>navbar}}
+     <!--main header-->
+     <div class="container-fluid main_header">
+            <div class="row">
+               <div class="col-md-10 col-12 mx-auto">
+                   <div class="row">
+                 <!-- right side div -->
+                <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure class="errimg">
+                            <img src="images/error404.jpg" class="img-fluid" title="Manoj Gopnarayan" alt="manoj">
+                        </figure>                        
+                  <p>Welcome to Weather App</p>
+                  <h1>{{errmsg}} </h1>
+                   <p>Please Contact to Admin.....</p>
+                   <a href="/"><button> Go Back to Home </button></a>
+                </div>
+            </div>
+               </div>
+            </div>
+    </div>  
+    {{>footer}}
+</body>
+</html>
